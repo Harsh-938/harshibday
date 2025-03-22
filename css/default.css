@@ -36,8 +36,8 @@ body {
 
 /* Love heart container */
 #loveHeart {
-    width: 40%;
-    max-width: 500px;
+    width: 35%;
+    max-width: 450px;
     height: auto;
     position: relative;
     backdrop-filter: blur(20px);
@@ -59,7 +59,7 @@ body {
 
 #words {
     font-family: "Poppins", sans-serif;
-    font-size: 24px;
+    font-size: clamp(16px, 2vw, 24px); /* Auto scales */
     color: #f5a0a0;
     max-width: 40%;
 }
@@ -68,7 +68,7 @@ body {
 #loveu {
     width: 90%;
     max-width: 400px;
-    font-size: 18px;
+    font-size: clamp(14px, 1.5vw, 18px);
     text-align: center;
     display: none;
     position: relative;
@@ -81,7 +81,7 @@ body {
     max-width: 420px;
     color: #d8d8d8;
     font-family: "Consolas", "Monaco", "Courier New", sans-serif;
-    font-size: 14px;
+    font-size: clamp(12px, 1.5vw, 16px);
     text-align: left;
     overflow-x: auto;
     padding: 10px;
@@ -102,7 +102,7 @@ body {
     color: #8c8c8c;
 }
 
-/* Force Landscape View for Mobile */
+/* Force Auto-Adjusting Landscape View */
 @media screen and (max-width: 1024px) and (orientation: landscape) {
     body {
         flex-direction: row;
@@ -119,22 +119,22 @@ body {
     }
 
     #loveHeart {
-        width: 40%;
+        width: 35%;
         height: auto;
     }
 
     #code {
-        width: 45%;
-        font-size: 16px;
+        width: 50%;
+        font-size: clamp(12px, 2vw, 16px);
     }
 
     #words {
-        font-size: 18px;
-        max-width: 40%;
+        font-size: clamp(16px, 2vw, 20px);
+        max-width: 45%;
     }
 
     #loveu {
-        font-size: 16px;
+        font-size: clamp(14px, 1.5vw, 18px);
         position: relative;
         top: 10px;
     }
