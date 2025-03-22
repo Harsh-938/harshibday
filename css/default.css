@@ -1,28 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@100..900&family=Inter:wght@500&family=Noto+Serif:wght@100..900&family=Pacifico&family=Poppins:wght@100..900&display=swap');
 
-body {
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     min-height: 100vh;
     width: 100%;
     background: linear-gradient(to right, rgb(7, 7, 7), rgb(12, 12, 12)), url("../img/heartbg.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    font-size: 12px;
-    overflow-x: hidden;
+    font-size: 14px;
     font-family: "Inter", serif;
-    color: #fff !important;
+    color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    overflow-x: hidden;
+    padding: 10px;
 }
 
-canvas {
-    display: block;
-}
-
+/* Fireworks Effect */
 #fireworks {
     position: fixed;
     top: 0;
@@ -34,35 +37,33 @@ canvas {
     background: transparent;
 }
 
-/* Main container */
+/* Main Content */
 #mainDiv {
     position: relative;
     width: 100%;
-    max-width: 90%;
-    margin-top: 10px;
+    max-width: 800px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    justify-content: center;
 }
 
-/* Content */
 #content {
-    margin-top: 20px;
     width: 100%;
-    max-width: 800px;
+    margin-top: 20px;
 }
 
-/* Love heart container */
+/* Love Heart */
 #loveHeart {
     width: 100%;
     max-width: 500px;
     height: auto;
-    position: relative;
     backdrop-filter: blur(20px);
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: auto;
 }
 
 #garden {
@@ -70,43 +71,36 @@ canvas {
     height: auto;
 }
 
+/* Clock */
 #elapseClock {
-    text-align: center;
-    font-size: 16px;
+    font-size: 18px;
     margin: 10px 0;
 }
 
+/* Words Section */
 #words {
     font-family: "Poppins", sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     color: #f5a0a0;
     max-width: 90%;
+    margin: auto;
 }
 
-/* Responsive text */
+/* Love You Section */
 #loveu {
     width: 90%;
     max-width: 400px;
-    font-size: 18px;
+    font-size: 20px;
     text-align: center;
     display: none;
     position: relative;
     margin-top: 20px;
 }
 
-.box2 p {
-    margin-top: -15px;
-    color: #fff;
-    font-weight: 800;
-}
-
-.box3 p {
-    margin-top: -15px;
-}
-
+/* Code Box */
 #code {
     width: 90%;
-    max-width: 420px;
+    max-width: 450px;
     margin-top: 40px;
     color: #d8d8d8;
     font-family: "Consolas", "Monaco", "Courier New", sans-serif;
@@ -118,7 +112,7 @@ canvas {
     border-radius: 8px;
 }
 
-/* Fix text colors */
+/* Text Colors */
 .comments { color: #6a9955; }
 .string { color: #ce9178; }
 .keyword { color: #569cd6; }
@@ -140,34 +134,66 @@ canvas {
     left: 0;
 }
 
-/* Responsive adjustments */
+/* LANDSCAPE MODE FIX */
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    body {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px;
+        font-size: 16px;
+    }
+
+    #mainDiv {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        max-width: 1200px;
+    }
+
+    #loveHeart {
+        max-width: 40%;
+    }
+
+    #code {
+        max-width: 50%;
+        font-size: 16px;
+    }
+
+    #words {
+        font-size: 18px;
+        max-width: 50%;
+    }
+}
+
+/* RESPONSIVE DESIGN */
 @media screen and (max-width: 768px) {
     body {
         font-size: 14px;
     }
 
+    #mainDiv {
+        padding: 10px;
+    }
+
+    #words {
+        font-size: 18px;
+    }
+
     #loveHeart {
-        max-width: 100%;
-        height: auto;
+        max-width: 90%;
     }
 
     #code {
         font-size: 12px;
         max-width: 95%;
     }
-
-    #loveu {
-        font-size: 16px;
-    }
 }
 
 @media screen and (max-width: 480px) {
     body {
         font-size: 12px;
-    }
-
-    #code {
-        font-size: 12px;
+        flex-direction: column;
     }
 
     #words {
@@ -176,5 +202,16 @@ canvas {
 
     #loveu {
         font-size: 14px;
+    }
+
+    #code {
+        font-size: 12px;
+    }
+
+    #mainDiv {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 }
