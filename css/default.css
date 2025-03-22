@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Inter:opsz,wght@14..32,500&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@100..900&family=Inter:wght@500&family=Noto+Serif:wght@100..900&family=Pacifico&family=Poppins:wght@100..900&display=swap');
 
 body {
     margin: 0;
     padding: 0;
-    height: 98vh;
-    width: 100vw;
+    min-height: 100vh;
+    width: 100%;
     background: linear-gradient(to right, rgb(7, 7, 7), rgb(12, 12, 12)), url("../img/heartbg.png");
     background-size: cover;
     background-position: center;
@@ -14,12 +13,10 @@ body {
     overflow-x: hidden;
     font-family: "Inter", serif;
     color: #fff !important;
-}
-
-#words {
-    font-family: "Poppins", sans-serif;
-    /* font-size: 24px; */
-    /* color: #f5a0a0; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 canvas {
@@ -32,84 +29,72 @@ canvas {
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; /* Allows clicks to pass through to content */
-    z-index: 9999; /* Ensure it's above all other content */
-    background: transparent; /* Make canvas background transparent */
+    pointer-events: none;
+    z-index: 9999;
+    background: transparent;
 }
 
-/* Existing content should have lower z-index */
+/* Main container */
 #mainDiv {
     position: relative;
-    z-index: 1;
-}
-
-#content {
-    margin-top: 20px !important;
-}
-
-#mainDiv {
     width: 100%;
-    height: 100%;
+    max-width: 90%;
     margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
+/* Content */
+#content {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+/* Love heart container */
 #loveHeart {
-    float: left;
-    width: 670px;
-    height: 620px;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
     position: relative;
     backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #garden {
     width: 100%;
-    height: 100%
+    height: auto;
 }
 
 #elapseClock {
-    text-align: right;
-    font-size: 18px;
-    margin-top: 10px;
-    margin-bottom: 10px
+    text-align: center;
+    font-size: 16px;
+    margin: 10px 0;
 }
 
 #words {
-    font-family: "sans-serif";
-    width: 500px;
-    font-size: 24px;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
     color: #f5a0a0;
+    max-width: 90%;
 }
 
-#messages {
-    display: none;
-}
-
-.clr {
-    color: #ddf2ff;
-}
-
-#elapseClock .digit {
-    font-family: "digit";
-    font-size: 36px
-}
-
+/* Responsive text */
 #loveu {
-    width: 315px;
-    /* padding: 5px; */
-    font-size: 21px;
-    /* margin-top: 80px; */
-    /* margin-right: 120px; */
+    width: 90%;
+    max-width: 400px;
+    font-size: 18px;
     text-align: center;
-    /* color: #ade0ff; */
     display: none;
-    position: absolute;
-    bottom: -191px;
-    left: 52%;
-    transform: translateX(-50%);
-    /* height: 187px; */
+    position: relative;
+    margin-top: 20px;
 }
 
-.box2 p{
+.box2 p {
     margin-top: -15px;
     color: #fff;
     font-weight: 800;
@@ -119,54 +104,21 @@ canvas {
     margin-top: -15px;
 }
 
-#loveu .signature {
-    margin-top: 10px;
-    font-size: 20px;
-}
-
-#clickSound {
-    display: none
-}
-
 #code {
-    float: left;
-    width: 440px;
-    margin-top: 40px !important;
-    height: 400px;
+    width: 90%;
+    max-width: 420px;
+    margin-top: 40px;
     color: #d8d8d8;
-    font-family: "Consolas", "Monaco", "Bitstream Vera Sans Mono", "Courier New", "sans-serif";
+    font-family: "Consolas", "Monaco", "Courier New", sans-serif;
     font-size: 14px;
+    text-align: left;
+    overflow-x: auto;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
 }
 
-#code .string {
-    /* color: #ffb500; */
-}
-
-#code .keyword {
-    /* color: #b91db2; */
-    font-weight: bold;
-}
-
-#code .placeholder {
-    margin-left: 15px
-}
-
-#code .space {
-    margin-left: 7px
-}
-
-#code .comments {
-    /* color: #cac9c9e0; */
-}
-.oclr  a{
-    color: #d8d8d8;
-}
-
-a {
-    color: #6a9955;
-    text-decoration: none;
-}
-
+/* Fix text colors */
 .comments { color: #6a9955; }
 .string { color: #ce9178; }
 .keyword { color: #569cd6; }
@@ -176,7 +128,7 @@ a {
     margin-top: 20px;
     text-align: center;
     width: 100%;
-    color: #8c8c8c
+    color: #8c8c8c;
 }
 
 #errorMsg {
@@ -185,11 +137,44 @@ a {
     font-size: 24px;
     position: absolute;
     top: 100px;
-    left: 0
+    left: 0;
 }
 
-#copyright a {
-    color: #c9c6c6
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    #loveHeart {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #code {
+        font-size: 12px;
+        max-width: 95%;
+    }
+
+    #loveu {
+        font-size: 16px;
+    }
 }
 
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
 
+    #code {
+        font-size: 12px;
+    }
+
+    #words {
+        font-size: 16px;
+    }
+
+    #loveu {
+        font-size: 14px;
+    }
+}
