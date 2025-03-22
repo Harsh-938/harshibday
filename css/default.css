@@ -3,15 +3,14 @@
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
     width: 100vw;
+    height: 100vh;
     background: linear-gradient(to right, rgb(7, 7, 7), rgb(12, 12, 12));
     font-size: 12px;
     overflow: hidden; /* Prevents scrolling */
     font-family: "Inter", serif;
-    color: #fff !important;
+    color: #fff;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -19,9 +18,9 @@ body {
 /* Main container */
 #mainDiv {
     position: relative;
-    width: 100%;
+    width: 90%;
     max-width: 1200px;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,7 +35,7 @@ body {
 
 /* Love heart container */
 #loveHeart {
-    width: 50%;
+    width: 45%;
     max-width: 500px;
     height: auto;
     position: relative;
@@ -61,6 +60,7 @@ body {
     font-family: "Poppins", sans-serif;
     font-size: 24px;
     color: #f5a0a0;
+    max-width: 90%;
 }
 
 /* Message box */
@@ -102,20 +102,20 @@ body {
     color: #8c8c8c;
 }
 
-/* Responsive Fixes */
+/* Landscape Mode */
 @media screen and (max-width: 1024px) and (orientation: landscape) {
     body {
         flex-direction: row;
+        justify-content: center;
         align-items: center;
-        justify-content: space-around;
-        padding: 20px;
+        padding: 10px;
     }
 
     #mainDiv {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        width: 90%;
+        width: 95%;
         height: 100vh;
     }
 
@@ -141,11 +141,15 @@ body {
     }
 }
 
-/* Prevent Scrolling on Small Screens (Portrait) */
+/* Small Screens (Portrait) */
 @media screen and (max-width: 768px) {
     body, #mainDiv {
         height: 100vh;
         width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     #loveHeart {
@@ -155,6 +159,10 @@ body {
     #code {
         font-size: 12px;
         max-width: 95%;
+    }
+
+    #words {
+        font-size: 18px;
     }
 
     #loveu {
